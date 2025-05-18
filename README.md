@@ -40,14 +40,6 @@ This demo allows you to test all the functionalities provided by the `capacitor-
 
     _(This will also install `capacitor-mlkit-doc-scanner` as it is listed in `package.json`)_
 
-3.  **Sync Capacitor project:**
-
-    ```bash
-    npx cap sync
-    ```
-
-    _(Ensure your project's `minSdkVersion` is 21 or higher in `android/app/build.gradle` and the ML Kit dependency `com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1` is present in `android/app/build.gradle` - these should already be configured in this demo)._
-
 ## Running the Demo
 
 1.  **Build the Android project:**
