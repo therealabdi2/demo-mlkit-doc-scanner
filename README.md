@@ -38,8 +38,6 @@ This demo allows you to test all the functionalities provided by the `capacitor-
     npm install
     ```
 
-    _(This will also install `capacitor-mlkit-doc-scanner` as it is listed in `package.json`)_
-
 ## Running the Demo
 
 1.  **Build the Android project:**
