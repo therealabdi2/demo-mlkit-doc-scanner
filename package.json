@@ -6,25 +6,33 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "build:android": "nx build doc-scanner-app && nx run doc-scanner-app:sync:android",
+    "sync:android": "nx run doc-scanner-app:sync:android"
   },
   "nx": {
     "includedScripts": []
   },
   "dependencies": {
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/app": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
+    "@capacitor/ios": "^6.0.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-router-dom": "6.29.0"
   },
   "devDependencies": {
+    "@capacitor/cli": "^6.0.0",
     "@eslint/js": "^9.8.0",
-    "@nx/eslint": "21.0.3",
-    "@nx/eslint-plugin": "21.0.3",
-    "@nx/js": "21.0.3",
-    "@nx/react": "21.0.3",
-    "@nx/vite": "21.0.3",
-    "@nx/web": "21.0.3",
-    "@nx/workspace": "21.0.3",
+    "@nx/eslint": "^20.8.2",
+    "@nx/eslint-plugin": "^20.8.2",
+    "@nx/js": "^20.8.2",
+    "@nx/react": "^20.8.2",
+    "@nx/vite": "^20.8.2",
+    "@nx/web": "^20.8.2",
+    "@nx/workspace": "^20.8.2",
+    "@nxext/capacitor": "^20.1.0",
     "@swc-node/register": "~1.9.1",
     "@swc/cli": "~0.6.0",
     "@swc/core": "~1.5.7",
@@ -42,7 +50,7 @@
     "eslint-plugin-react-hooks": "5.0.0",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
-    "nx": "21.0.3",
+    "nx": "^20.8.2",
     "prettier": "^2.6.2",
     "tslib": "^2.3.0",
     "typescript": "~5.7.2",

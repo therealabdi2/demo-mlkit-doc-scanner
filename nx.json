@@ -43,7 +43,8 @@
         "buildDepsTargetName": "build-deps",
         "watchDepsTargetName": "watch-deps"
       }
-    }
+    },
+    "@nxext/capacitor/plugin"
   ],
   "defaultProject": "doc-scanner-app",
   "generators": {
