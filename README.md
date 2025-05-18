@@ -1,101 +1,73 @@
-# DemoMlkitDocScanner
+# Capacitor ML Kit Document Scanner Demo
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+This project demonstrates the capabilities of the `capacitor-mlkit-doc-scanner` plugin, showcasing its various features for scanning documents in a Capacitor application.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is ready ✨.
+## Features Demonstrated
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/react-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+This demo allows you to test all the functionalities provided by the `capacitor-mlkit-doc-scanner` plugin, including:
 
-## Run tasks
+- **Default Scan:** Initiates a scan with the default plugin settings.
+- **Gallery Import:** Allows importing images from the device gallery for document creation.
+- **Page Limit:** Sets a maximum number of pages for a single scan session.
+- **Result Formats:**
+  - Scan as JPEG.
+  - Scan as PDF.
+  - Scan as both JPEG and PDF.
+- **Scanner Modes:**
+  - `FULL`: Enables auto-capture and file format selection.
+  - `BASE`: Disables auto-capture and file format selection; requires manual capture.
+  - `BASE_WITH_FILTER`: Enables gallery import, otherwise behaves like `BASE`.
+- **Displaying Scanned Images:** Shows the scanned JPEG images within the app.
+- **Opening Scanned PDF:** Allows opening the generated PDF using the device's browser or a PDF viewer.
 
-To run the dev server for your app, use:
+## Plugin Used
 
-```sh
-npx nx serve doc-scanner-app
-```
+- [capacitor-mlkit-doc-scanner](https://www.npmjs.com/package/capacitor-mlkit-doc-scanner)
 
-To create a production bundle:
+## Project Setup
 
-```sh
-npx nx build doc-scanner-app
-```
+1.  **Clone the repository:**
 
-To see all available targets to run for a project, run:
+    ```bash
+    git clone git@github.com:therealabdi2/demo-mlkit-doc-scanner.git
+    ```
 
-```sh
-npx nx show project doc-scanner-app
-```
+2.  **Install dependencies:**
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+    ```bash
+    npm install
+    ```
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+    _(This will also install `capacitor-mlkit-doc-scanner` as it is listed in `package.json`)_
 
-## Add new projects
+3.  **Sync Capacitor project:**
 
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
+    ```bash
+    npx cap sync
+    ```
 
-Use the plugin's generator to create new projects.
+    _(Ensure your project's `minSdkVersion` is 21 or higher in `android/app/build.gradle` and the ML Kit dependency `com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1` is present in `android/app/build.gradle` - these should already be configured in this demo)._
 
-To generate a new application, use:
+## Running the Demo
 
-```sh
-npx nx g @nx/react:app demo
-```
+1.  **Build the Android project:**
 
-To generate a new library, use:
+    ```bash
+    npm run build:android
+    ```
 
-```sh
-npx nx g @nx/react:lib mylib
-```
+2.  **Open the project in Android Studio:**
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+    ```bash
+    npx cap open android
+    ```
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+3.  **Run the app on an Android device or emulator from Android Studio.**
 
-## Set up CI!
+    - **Important:** The ML Kit Document Scanner models are dynamically downloaded by Google Play services. Users might have to wait for these to download before the first use. The API requires Android API level 21 or above and a minimum device total RAM of 1.7GB.
 
-### Step 1
+## Development Notes
 
-To connect to Nx Cloud, run the following command:
-
-```sh
-npx nx connect
-```
-
-Connecting to Nx Cloud ensures a [fast and scalable CI](https://nx.dev/ci/intro/why-nx-cloud?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) pipeline. It includes features such as:
-
-- [Remote caching](https://nx.dev/ci/features/remote-cache?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task distribution across multiple machines](https://nx.dev/ci/features/distribute-task-execution?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Automated e2e test splitting](https://nx.dev/ci/features/split-e2e-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Task flakiness detection and rerunning](https://nx.dev/ci/features/flaky-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-### Step 2
-
-Use the following command to configure a CI workflow for your workspace:
-
-```sh
-npx nx g ci-workflow
-```
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/react-standalone-tutorial?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- The main application logic is in `src/app/app.tsx`.
+- Styles are in `src/styles.css`.
+- Ensure you have Android Studio and the necessary Android SDKs installed.
