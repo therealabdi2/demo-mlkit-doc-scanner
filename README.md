@@ -14,9 +14,9 @@ This demo allows you to test all the functionalities provided by the `capacitor-
   - Scan as PDF.
   - Scan as both JPEG and PDF.
 - **Scanner Modes:**
-  - `FULL`: Enables auto-capture and file format selection.
-  - `BASE`: Disables auto-capture and file format selection; requires manual capture.
-  - `BASE_WITH_FILTER`: Enables gallery import, otherwise behaves like `BASE`.
+  - `BASE`: Basic editing capabilities (crop, rotate, reorder pages, etc.).
+  - `BASE_WITH_FILTER`: Adds image filters (grayscale, auto image enhancement, etc.) to the `BASE` mode.
+  - `FULL` (default): Adds ML-enabled image cleaning capabilities (erase stains, fingers, etc.) to the `BASE_WITH_FILTER` mode. This mode will also allow future major features to be automatically added along with Google Play services updates, while the other two modes will maintain their current feature sets and only receive minor refinements.
 - **Displaying Scanned Images:** Shows the scanned JPEG images within the app.
 - **Opening Scanned PDF:** Allows opening the generated PDF using the device's browser or a PDF viewer.
 
